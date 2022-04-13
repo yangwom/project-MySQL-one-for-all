@@ -3,15 +3,15 @@ CREATE DATABASE IF NOT EXISTS SpotifyClone;
 
 CREATE TABLE SpotifyClone.assinatura(
   id_assinatura INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  plano VARCHAR(45) NOT NULL
+  plano VARCHAR(45) NOT NULL,
+  preço DECIMAL(5,2)
 )ENGINE = innoDB;
 
-INSERT INTO SpotifyClone.assinatura(id_assinatura, plano) VALUES 
-(1, 'gratuito'),
-(2, 'familiar'),
-(3, 'universitário'),
-(4, 'pessoal');
-
+INSERT INTO SpotifyClone.assinatura(plano, preço) VALUES 
+('gratuito', 0),
+('familiar', 5.99),
+('universitário', 6.99),
+('pessoal', 7.99 );
 CREATE TABLE SpotifyClone.users(
   usuario_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   id_assinatura INT NOT NULL,
@@ -38,7 +38,7 @@ CREATE TABLE SpotifyClone.musicas(
   album_id INT NOT NULL,
   cancoes VARCHAR(100),
   duracao INT,
-  ano_de_lancamento YEAR
+  ano_de_lancamento INT
 )ENGINE = innoDB;
 
 INSERT INTO SpotifyClone.musicas(album_id, cancoes, duracao, ano_de_lancamento ) VALUES
@@ -83,6 +83,7 @@ INSERT INTO SpotifyClone.musicas(album_id, cancoes, duracao, ano_de_lancamento )
     (10, 'Baby', 136, 2015),
     (10, 'You Make Me Feel So..', 83, 2015);
 
+
 CREATE TABLE SpotifyClone.reproducoes(
   usuario_id INT,
   id_music INT,
@@ -102,7 +103,7 @@ INSERT INTO SpotifyClone.reproducoes(usuario_id, id_music, data_de_reproducao) V
   (2, 24, '2020-05-16 06:16:22'),
   (2, 21, '2020-10-09 12:27:48'),
   (2, 39, '2020-09-21 13:14:46'),
-  (3, 6, '2020-11-13 16:55:13'),
+  (3, 6,  '2020-11-13 16:55:13'),
   (3, 3, '2020-12-05 18:38:30'),
   (3, 26, '2020-07-30 10:00:00'),
   (4, 2, '2021-08-15 17:10:10'),
@@ -135,7 +136,7 @@ INSERT INTO SpotifyClone.reproducoes(usuario_id, id_music, data_de_reproducao) V
 
 CREATE TABLE SpotifyClone.artista(
   artist_id INT PRIMARY KEY AUTO_INCREMENT,
-  nome VARCHAR(45)
+  nome VARCHAR(45) NOT NULL
 )ENGINE = innoDB;
 
 INSERT INTO SpotifyClone.artista(nome) VALUES
@@ -182,7 +183,7 @@ INSERT INTO SpotifyClone.artistas_favorito(usuario_id, artist_id) VALUES
 
 CREATE TABLE SpotifyClone.album(
   album_id INT PRIMARY KEY AUTO_INCREMENT,
-  artist_id INT NULL,
+  artist_id INT NOT NULL,
   album_name VARCHAR(100),
   FOREIGN KEY (artist_id) REFERENCES artista (artist_id)
 )ENGINE = innoDB;
