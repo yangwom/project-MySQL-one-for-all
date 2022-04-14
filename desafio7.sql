@@ -1,7 +1,3 @@
-SELECT *  FROM artista;
-SELECT * FROM users;
-
-SELECT * FROM artistas_favorito;
 SELECT 
 art.nome AS 'artista',
 alb.album_name AS 'album',
