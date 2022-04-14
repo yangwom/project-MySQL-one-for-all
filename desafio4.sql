@@ -5,5 +5,3 @@ JOIN reproducoes AS re
 ON usr.usuario_id = re.usuario_id
 GROUP BY usr.usuario_id add
 ORDER BY usr.nome;
-
--- SELECT max(data_de_reproducao) FROM reproducoes WHERE data_de_reproducao LIKE '2021%';
