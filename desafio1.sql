@@ -9,9 +9,9 @@ CREATE TABLE SpotifyClone.assinatura(
 
 INSERT INTO SpotifyClone.assinatura(plano, preço) VALUES 
 ('gratuito', 0),
-('familiar', 5.99),
-('universitário', 6.99),
-('pessoal', 7.99 );
+('familiar', 7.99),
+('universitário', 5.99),
+('pessoal', 6.99 );
 CREATE TABLE SpotifyClone.users(
   usuario_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   id_assinatura INT NOT NULL,
@@ -28,7 +28,7 @@ INSERT INTO SpotifyClone.users(id_assinatura, nome, idade, data_assinatura) VALU
 (4,'Roger', 45, '2020-05-13'),
 (4,'Norman', 58, '2017-02-17'),
 (2,'Patrick', 33, '2017-01-06'),
-(2,'Vivian', 26, '2018-01-05'),
+(3,'Vivian', 26, '2018-01-05'),
 (3,'Carol', 19, '2018-02-14'),
 (2,'Angelina', 42, '2018-04-29'),
 (2,'Paul', 46, '2017-01-17');
