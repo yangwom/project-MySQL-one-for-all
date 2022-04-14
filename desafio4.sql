@@ -3,5 +3,5 @@ IF(max(re.data_de_reproducao) LIKE '2021%', 'Usuário ativo', 'Usuário inativo'
 FROM users AS usr
 JOIN reproducoes AS re
 ON usr.usuario_id = re.usuario_id
-GROUP BY usr.usuario_id add
+GROUP BY usr.usuario_id 
 ORDER BY usr.nome;
