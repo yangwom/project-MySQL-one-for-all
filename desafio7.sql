@@ -6,4 +6,4 @@ FROM artista AS art
 JOIN album AS alb ON alb.artist_id = art.artist_id
 JOIN artistas_favorito AS seg ON seg.artist_id = alb.artist_id
 GROUP BY alb.album_name, art.nome
-ORDER BY seguidores DESC;
+ORDER BY seguidores DESC, artista, album;
