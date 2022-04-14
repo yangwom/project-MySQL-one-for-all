@@ -5,5 +5,5 @@ FROM reproducoes AS re
 JOIN musicas AS c 
 ON c.id_music = re.id_music
 GROUP BY c.cancoes
-ORDER BY reproducoes DESC
+ORDER BY reproducoes DESC, cancoes 
 LIMIT 2;
